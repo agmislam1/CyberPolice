@@ -1,4 +1,4 @@
-# DNN Model to Detect Cyberbullying
+# DNN Models to Detect Cyberbullying
 
 Abstract. As the number of people using social media increases rapidly, cyber bullying has become a severe problem. To express ideas, people are fre quently seen verbally attacking another. For many people, the impacts of cyberbullying remain longer. So, it is high time to detect such bul lies and hateful comments on social media and take appropriate action. To resolve this issue in this project, we want to make a model that can detect such comments automatically. We used four deep neural network models - Long Short-Term Memory(LSTM), stacked LSTM, Bidirectional LSTM with multi-head attention, and stacked Bidirectional LSTM with attention and compared which model gave the most accurate result. After training these models with the Twitter dataset, we found out that LSTM performed the worst among the four models, while stacked LSTM better classified sexism than other models. For classifying racism, bidirectional LSTM with multi-head attention gave the best F1-score among the other models.
 
