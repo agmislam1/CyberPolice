@@ -1,36 +1,34 @@
 # Detecting-Cyberbullying-Across-SMPs
 
-Abstract. Harassment by cyberbullies is a significant phenomenon on the social media. Existing works for cyberbullying detection have at least one of the following three bottlenecks. First, they target only one particular social media platform (SMP). Second, they address just one topic of cyberbullying. Third, they rely on carefully handcrafted features of the data. We show that deep learning based models can overcome all three bottlenecks. Knowledge learned by these models on one dataset can be transferred to other datasets. We performed extensive experiments using three real-world datasets: Formspring (˜12k posts), Twitter (˜16k posts), and Wikipedia(˜100k posts). Our experiments provide several useful insights about cyberbullying detection. To the best of our knowledge, this is the first work that systematically analyzes cyberbullying detection on various topics across multiple SMPs using deep learning based models and transfer learning.
+Abstract. As the number of people using social media increases rapidly, cyber bullying has become a severe problem. To express ideas, people are fre quently seen verbally attacking another. For many people, the impacts of cyberbullying remain longer. So, it is high time to detect such bul lies and hateful comments on social media and take appropriate action. To resolve this issue in this project, we want to make a model that can detect such comments automatically. We used four deep neural network models - Long Short-Term Memory(LSTM), stacked LSTM, Bidirectional LSTM with multi-head attention, and stacked Bidirectional LSTM with attention and compared which model gave the most accurate result. After training these models with the Twitter dataset, we found out that LSTM performed the worst among the four models, while stacked LSTM better classified sexism than other models. For classifying racism, bidirectional LSTM with multi-head attention gave the best F1-score among the other models.
 
 ## Dataset
 
-The three datasets used in the paper can be downloaded from [here](https://drive.google.com/open?id=11RMLCSIAO3dWk9ejSkVYc5tQwwK5pquG).
-
-Please download the dataset and unzip at data/.
-
-We have also used two different kind of embeddings for initialization which can be found at the mentioned links.
-
-- [Sentiment Specific word embeddings (SSWE)](http://ir.hit.edu.cn/~dytang/paper/sswe/embedding-results.zip)
-- [GLoVe](https://nlp.stanford.edu/projects/glove/)
-
+We used twitter dataset which can be found in the data folder in pkl format.
 
 ### Prerequisites
 
-- Keras
-- Tflearn
-- Tensorflow
-- Xgboost
-- Sklearn
-- Numpy
+The following commands need to run to create the environment
+
+pip install pywin32
+
+pip install tensorflow==1.15.2
+
+* pip install sklearn
+* pip install matplotlib
+* pip install keras
+* pip install pandas
+* pip install textblob
+* pip install git+https://github.com/tflearn/tflearn.git
+* pip install tweet-preprocessor
+* pip install numpy==1.19.5
 
 ### Instructions to run
 
  - models.py : All the model architectures are defined in this file.
- - DNNs.ipynb : This notebook is responsible for training DNN models with three methods to initialize word embeddings.
- - TraditionalML.ipynb : The results from training ML models such as SYM, Naive Bayes, etc can be generated using this nnotebook.
- - Transfer Learning.ipynb : We used transfer learning to check if the knowledge gained by DNN models on one dataset can be    used to improve cyberbullying detection performance on other datasets. The code for the same is available in this file.
+ - DNNs.ipynb : This notebook is responsible for training DNN models (LSTM, stacked LSTM, bi-directional LSTM with multi-head attention, stacked bi-directional LSTM with attention ) to initialize random word embeddings.
 
-To know more about the architecture used and results, please read our paper [here](https://arxiv.org/pdf/1801.06482.pdf).
+Once the model is run, corresponding precision, recall & F1-score will be generated
 
 
 ### Reproducibility Study 
